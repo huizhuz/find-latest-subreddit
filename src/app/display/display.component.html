@@ -1,1 +1,4 @@
-<p>display works!</p>
+<div class="display-container">
+    <app-preview *ngIf = "postExist"></app-preview>
+    <app-preview-none *ngIf = "!postExist"></app-preview-none>
+</div>

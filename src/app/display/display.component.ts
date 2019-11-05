@@ -8,7 +8,8 @@ import { SubredditService } from '../services/subreddit.service'
   styleUrls: ['./display.component.css']
 })
 export class DisplayComponent implements OnInit {
-  public post:any = null;
+  public post: any = null;
+  public postExist: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -16,12 +17,14 @@ export class DisplayComponent implements OnInit {
 
 
     this.route.params.subscribe(params => {
-      this.subredditService.getPost(params.subreddit).subscribe(res=>{
-        
-        if(res && res.data.children.length === 1){
+      this.subredditService.getPost(params.subreddit).subscribe(res => {
+        if (res && res.data.children.length === 1) {
+          this.postExist = true;
           this.post = res.data.children[0].data;
           console.log(this.post.title);
         }
+      }, err => {
+        this.postExist = false;
       })
     });
   }

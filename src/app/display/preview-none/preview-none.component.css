@@ -1,0 +1,50 @@
+.no-content-container{
+    margin: 0 auto;
+    height: 35vh;
+    width: 50vw;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+    letter-spacing: 0.1rem;
+    transition: all 0.5s ease;
+    background-color: rgba(238, 241, 189, 0.514);
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    margin: 1rem;
+    padding: 2rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+    background-color: rgba(231, 235, 172, 0.932);
+    border-radius: 20px;
+}
+
+.no-content-container:hover{
+    box-shadow: 2px 3px 3px #ccc;
+    transform: translateY(-2px);
+}
+
+.frown-icon{
+    font-size: 1.5rem;
+    animation: rotation 2s infinite;
+}
+
+@keyframes rotation {
+    from { transform: rotateZ(0deg); }
+    to {transform: rotateZ(360deg); }
+}
+
+@media(max-width: 530px){
+    .no-content-container h2{
+        font-size: 1.2rem;
+        letter-spacing: 0;
+    }
+}

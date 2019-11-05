@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class SubredditService {
   
   constructor(private http: HttpClient) { }
-  public getPost(subreddit: string){
+  public getPost(subreddit: string): Observable<any>{
     return this.http.get(`https://www.reddit.com/r/${subreddit}/new.json?limit=1`)
   }
 }

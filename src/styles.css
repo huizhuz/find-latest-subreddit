@@ -2,12 +2,14 @@
 body{
     margin: 0;
     font-family: 'Yrsa', serif; 
-    font-size: 1.1rem;
+    font-size: 1rem;
+    font-weight: 300;
 }
 
 /******* FONT FAMILIES *****************
 font-family: 'Lakki Reddy', cursive;
 font-family: 'Yrsa', serif; 
+font-family: 'Open Sans Condensed', sans-serif;
 ***************************************/
 
 
