@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0;
+    font-family: 'Yrsa', serif; 
+    font-size: 1.1rem;
+}
+
+/******* FONT FAMILIES *****************
+font-family: 'Lakki Reddy', cursive;
+font-family: 'Yrsa', serif; 
+***************************************/
+
+
+/******* COLOR PALETTE *****************
+VAN DYKE BROWN: rgba(100, 69, 54, 1);
+COPPER PENNY: rgba(178, 103, 94, 1);
+LIGHT FRENCH BEIGE: rgba(196, 163, 129, 1);
+MEDIUM SPRING BUD: rgba(187, 214, 134, 1);
+PALE SPRING BUD: rgba(238, 241, 189, 1);
+***************************************/

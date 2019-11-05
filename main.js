@@ -1,6 +1,10 @@
 const { app, BrowserWindow } = require('electron')
 const url = require("url");
 const path = require("path");
+//hot reload
+require('electron-reload')(__dirname, {
+    electron: require(`${__dirname}/node_modules/electron`)
+});
 
 let mainWindow
 
@@ -8,6 +12,7 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 800,
         height: 600,
+        icon: __dirname + './src/favicon.ico',
         webPreferences: {
             nodeIntegration: true
         }

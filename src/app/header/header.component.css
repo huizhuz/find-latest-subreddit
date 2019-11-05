@@ -1,0 +1,33 @@
+.container{
+    height: 25vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title{
+    margin: 0 auto;
+    font-family: 'Lakki Reddy', cursive;
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+    transition: all 0.3s ease;
+	text-shadow: 0 10px 3px rgba(0,0,0,.1);
+/* 
+	animation: float 2.5s linear infinite;
+	animation-direction: alternate; */
+}
+/* 
+@keyframes float {
+	from { transform: rotate(3deg); }
+
+	to { transform: rotate(-3deg); }
+} */
+
+@media(max-width: 500px){
+    .title{
+        font-size: 1.5rem;
+    }
+}
