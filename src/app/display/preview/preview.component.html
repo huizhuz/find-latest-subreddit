@@ -1,1 +1,25 @@
-<p>preview works!</p>
+<div class="post-container">
+    <div class="meta-container">
+        <p>Posted by {{post.author}}</p>
+    </div>
+    <div class="title-container">
+        <p>{{post.title}}</p>
+    </div>
+    <div class="content-container" *ngIf="textContentExist">
+        <p>{{post.selftext}}</p>
+    </div>
+    <div class="link-container" *ngIf="outerLinkExist">
+        <p><a [href]="linkURL" target=_blank>See the link here <fa-icon [icon]=faExternalLinkAlt class="link-icon"></fa-icon></a></p>
+    </div>
+    <div class="media-container" *ngIf="mediaExist">
+        <img [src]="imageURL" *ngIf="mediaIsImage">
+        <div class="video-container" *ngIf="mediaIsVideo">
+            <iframe 
+                [src]="videoURL" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+
+    </div>
+    <div class="comment-container"></div>
+</div>

@@ -21,7 +21,7 @@ export class DisplayComponent implements OnInit {
         if (res && res.data.children.length === 1) {
           this.postExist = true;
           this.post = res.data.children[0].data;
-          console.log(this.post.title);
+          console.log(this.post)
         }
       }, err => {
         this.postExist = false;
