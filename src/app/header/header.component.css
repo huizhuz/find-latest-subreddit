@@ -1,20 +1,35 @@
 .container{
     height: 25vh;
-    color: white;
+}
+
+.title-background{
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+    position: relative;
 }
 
 .title{
     margin: 0 auto;
     font-family: 'Lakki Reddy', cursive;
-    font-size: 2rem;
+    font-size: 2.4rem;
     letter-spacing: 0.1rem;
     transition: all 0.3s ease;
-	text-shadow: 0 10px 3px rgba(0,0,0,.1);
+    color: white;
+    text-shadow: 0 10px 3px rgba(0,0,0,.1);
+    position: relative;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    text-align: center;
+    z-index: 2;
 /* 
 	animation: float 2.5s linear infinite;
 	animation-direction: alternate; */

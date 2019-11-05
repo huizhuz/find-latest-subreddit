@@ -5,8 +5,10 @@ import { DisplayComponent } from './display/display.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent},
-  { path: 'subreddit/:name', component: DisplayComponent}
+  { path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path: 'home', component: HomeComponent},
+  { path: 'display/:subreddit', component: DisplayComponent}
+
 ];
 
 @NgModule({

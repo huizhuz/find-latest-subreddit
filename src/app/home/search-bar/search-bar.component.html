@@ -1,4 +1,4 @@
 <div class="search-bar">
-    <input type="text" class="search-input" />
-    <fa-icon [icon]="faSearch" class="search-icon"></fa-icon>
+    <input type="text" class="search-input" [(ngModel)]="searchKeyword"/>
+    <fa-icon [icon]="faSearch" class="search-icon" (click)="onSubmit()"></fa-icon>
 </div>
