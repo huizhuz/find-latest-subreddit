@@ -14,12 +14,34 @@ p{
     justify-content: flex-start;
     align-items: left;
     transition: all 0.5s ease;
+    background-color: rgba(216, 216, 216, 0.226);
 }
 
 
 .post-container:hover{
     box-shadow: 2px 3px 3px #ccc;
     transform: translateY(-2px);
+}
+
+.control{
+    margin: 0 auto;
+    margin-top: 2rem;
+    width: 50vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon{
+    padding: 1rem;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+    font-size: 1.5rem;
+}
+
+.icon:hover{
+    opacity: 1;
+    cursor: pointer;
 }
 
 .meta-container{
@@ -53,8 +75,15 @@ p{
 img{
     max-width: 100%;
     max-height: 70vh;
+    position: relative;
+    transition: all 0.4s ease;
 }
 
+img:hover{
+    box-shadow: 2px 3px 3px #ccc;
+    transform: translateY(-2px);
+    cursor: pointer;
+}
 .video-container{
     margin: 0 auto;
     width: 100%;

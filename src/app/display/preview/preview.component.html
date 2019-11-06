@@ -1,3 +1,8 @@
+<div class="control">
+    <fa-icon [icon]="faHome" class="icon" (click)="onGoHome()"></fa-icon>
+    <fa-icon [icon]="faSyncAlt" class="icon" (click)="onRefresh()"></fa-icon>
+</div>
+
 <div class="post-container">
     <div class="meta-container">
         <p>Posted by {{post.author}}</p>
@@ -13,7 +18,7 @@
                 </fa-icon></a></p>
     </div>
     <div class="media-container" *ngIf="mediaExist">
-        <img [src]="imageURL" *ngIf="mediaIsImage">
+        <img [src]="imageURL" *ngIf="mediaIsImage" (click)="openImageInNewTab()">
         <div class="video-container" *ngIf="mediaIsVideo">
             <iframe class="video-iframe" [src]="videoURL" frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -22,8 +27,8 @@
     </div>
     <div class="comment-container">
         <div class="num-comments-container" (click)="openCommentDrawer()">
-            <p *ngIf="post.num_comments < 2">{{post.num_comments}} comment</p>
-            <p *ngIf="post.num_comments > 1">{{post.num_comments}} comments</p>
+            <p *ngIf="comments.length < 2">{{comments.length}} comment</p>
+            <p *ngIf="comments.length > 1">{{comments.length}} comments</p>
         </div>
         <div class="comment-drawer" *ngIf="showComments">
             <app-comments [eachComment]="eachComment" *ngFor="let eachComment of comments"></app-comments>

@@ -12,7 +12,7 @@
     font-family: 'Open Sans Condensed', sans-serif;
     letter-spacing: 0.1rem;
     transition: all 0.5s ease;
-    background-color: rgba(238, 241, 189, 0.514);
+    background-color: rgba(216, 216, 216, 0.226);;
 }
 
 a{
@@ -23,8 +23,13 @@ a{
     font-size: 1.2rem;
     letter-spacing: 0.1rem;
     font-weight: bold;
-    background-color: rgba(231, 235, 172, 0.932);
+    background-color: rgba(216, 216, 216, 0.37);;
     border-radius: 20px;
+    transition: all 0.3s ease;
+}
+a:hover{
+    box-shadow: 2px 3px 3px #ccc;
+    transform: translateY(-2px);
 }
 
 .no-content-container:hover{

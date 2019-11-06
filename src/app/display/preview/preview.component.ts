@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faSyncAlt } from '@fortawesome/free-solid-svg-icons';
 import { Url } from 'url';
 
 @Component({
@@ -11,6 +12,13 @@ import { Url } from 'url';
 export class PreviewComponent implements OnInit {
   @Input() post: any;
   @Input() comments: Array<any>;
+
+  @Output() goHomeClicked = new EventEmitter();
+  @Output() refreshClicked = new EventEmitter();
+
+  public faHome = faHome;
+  public faSyncAlt = faSyncAlt;
+
   private faExternalLinkAlt = faExternalLinkAlt;
   private mediaExist: boolean = false;   //change
   private textContentExist: boolean = false;
@@ -27,7 +35,6 @@ export class PreviewComponent implements OnInit {
   }
   
   ngOnInit() {
-    console.log(this.comments);
     if (this.post.post_hint) {
       switch (this.post.post_hint) {
         case "self":
@@ -71,5 +78,17 @@ export class PreviewComponent implements OnInit {
     if(this.post.num_comments !== 0){
       this.showComments = !this.showComments;
     }
+  }
+
+  openImageInNewTab = () => {
+    window.open(this.post.url, '_blank');
+  }
+
+  onGoHome(){
+    this.goHomeClicked.emit();
+  }
+
+  onRefresh(){
+    this.refreshClicked.emit();
   }
 }
