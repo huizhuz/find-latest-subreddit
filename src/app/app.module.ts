@@ -15,6 +15,7 @@ import { CommentsComponent } from './display/preview/comments/comments.component
 import { HomeComponent } from './home/home.component';
 import { DisplayComponent } from './display/display.component';
 import { LoadingComponent } from './common/loading/loading.component';
+import { ShortcutsComponent } from './home/shortcuts/shortcuts.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LoadingComponent } from './common/loading/loading.component';
     CommentsComponent,
     HomeComponent,
     DisplayComponent,
-    LoadingComponent
+    LoadingComponent,
+    ShortcutsComponent
   ],
   imports: [
     BrowserModule,

@@ -33,17 +33,10 @@ export class PreviewComponent implements OnInit {
 
   constructor(public sanitizer: DomSanitizer) {
   }
-  
+
   ngOnInit() {
     if (this.post.post_hint) {
       switch (this.post.post_hint) {
-        case "self":
-          this.textContentExist = true;
-          break;
-        case "link":
-          this.outerLinkExist = true;
-          this.linkURL = this.sanitizer.bypassSecurityTrustResourceUrl(this.post.url);
-          break;
         case "image":
           this.mediaExist = true;
           this.mediaIsImage = true;
@@ -53,10 +46,10 @@ export class PreviewComponent implements OnInit {
           this.mediaExist = true;
           this.mediaIsVideo = true;
           let tempURL: string = this.post.url;
-          if(tempURL.includes('https://www.youtube.com')){
+          if (tempURL.includes('https://www.youtube.com')) {
             tempURL = tempURL.replace('watch?v=', 'embed/');
-          } else if(tempURL.includes('https://youtu.be/')){
-            tempURL = tempURL.replace('https://youtu.be/','https://www.youtube.com/embed/');
+          } else if (tempURL.includes('https://youtu.be/')) {
+            tempURL = tempURL.replace('https://youtu.be/', 'https://www.youtube.com/embed/');
           }
           this.videoURL = this.sanitizer.bypassSecurityTrustResourceUrl(tempURL);
           break;
@@ -65,17 +58,29 @@ export class PreviewComponent implements OnInit {
           this.mediaIsVideo = true;
           this.videoURL = this.sanitizer.bypassSecurityTrustResourceUrl(this.post.media.reddit_video.fallback_url);
           break;
+        case "self":
+          this.textContentExist = true;
+          break;
+        case "link":
+          this.outerLinkExist = true;
+          this.linkURL = this.sanitizer.bypassSecurityTrustResourceUrl(this.post.url);
+          // if (this.post.secure_media && this.post.secure_media.oembed) {
+          //   this.mediaExist = true;
+          //   this.mediaIsImage = true;
+          //   this.imageURL = this.sanitizer.bypassSecurityTrustResourceUrl(this.post.url);
+          // }
+          break;
       }
-    } else if(this.post.selftext.length !== 0){
+    } else if (this.post.selftext.length !== 0) {
       this.textContentExist = true;
-    } else if(this.post.selftext.length === 0){
+    } else if (this.post.selftext.length === 0) {
       this.outerLinkExist = true;
       this.linkURL = this.sanitizer.bypassSecurityTrustResourceUrl(this.post.url);
     }
   }
 
-  openCommentDrawer(){
-    if(this.post.num_comments !== 0){
+  openCommentDrawer() {
+    if (this.post.num_comments !== 0) {
       this.showComments = !this.showComments;
     }
   }
@@ -84,11 +89,11 @@ export class PreviewComponent implements OnInit {
     window.open(this.post.url, '_blank');
   }
 
-  onGoHome(){
+  onGoHome() {
     this.goHomeClicked.emit();
   }
 
-  onRefresh(){
+  onRefresh() {
     this.refreshClicked.emit();
   }
 }
