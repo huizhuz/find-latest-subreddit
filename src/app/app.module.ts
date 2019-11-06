@@ -7,13 +7,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './common/header/header.component';
 import { SearchBarComponent } from './home/search-bar/search-bar.component';
 import { PreviewComponent } from './display/preview/preview.component';
 import { PreviewNoneComponent } from './display/preview-none/preview-none.component';
 import { CommentsComponent } from './display/preview/comments/comments.component';
 import { HomeComponent } from './home/home.component';
 import { DisplayComponent } from './display/display.component';
+import { LoadingComponent } from './common/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DisplayComponent } from './display/display.component';
     PreviewNoneComponent,
     CommentsComponent,
     HomeComponent,
-    DisplayComponent
+    DisplayComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

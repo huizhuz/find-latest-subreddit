@@ -1,0 +1,27 @@
+.comment-container{
+    margin: 1rem;
+    display: flex;
+    justify-content: start;
+    background-color: rgba(245, 245, 220, 0.651);
+    border-radius: 5px;
+    position: relative;
+}
+
+.left-stripe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.5rem;
+    height: 100%;
+    background-color: rgba(156, 194, 243, 0.924);
+    border-radius: 5px;
+}
+
+.content p{
+    margin: 0;
+    padding: 0.3rem 0.5rem 0.7rem;
+    margin-left: 0.5rem;
+}
+.meta{
+    color: #555;
+}

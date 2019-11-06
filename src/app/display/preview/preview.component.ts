@@ -10,10 +10,13 @@ import { Url } from 'url';
 })
 export class PreviewComponent implements OnInit {
   @Input() post: any;
+  @Input() comments: Array<any>;
   private faExternalLinkAlt = faExternalLinkAlt;
   private mediaExist: boolean = false;   //change
   private textContentExist: boolean = false;
   private outerLinkExist: boolean = false;
+  private showComments: boolean = false;
+
   private mediaIsVideo: boolean = false;
   private mediaIsImage: boolean = false;
   private linkURL: Url;
@@ -21,11 +24,10 @@ export class PreviewComponent implements OnInit {
   private imageURL: Url;
 
   constructor(public sanitizer: DomSanitizer) {
-    // sanitizer.bypassSecurityTrustResourceUrl(this.post.url);
   }
   
-
   ngOnInit() {
+    console.log(this.comments);
     if (this.post.post_hint) {
       switch (this.post.post_hint) {
         case "self":
@@ -43,8 +45,13 @@ export class PreviewComponent implements OnInit {
         case "rich:video":
           this.mediaExist = true;
           this.mediaIsVideo = true;
-          // this.post.secure_media_embed.content contains the element
-          this.videoURL = this.sanitizer.bypassSecurityTrustResourceUrl(this.post.url);
+          let tempURL: string = this.post.url;
+          if(tempURL.includes('https://www.youtube.com')){
+            tempURL = tempURL.replace('watch?v=', 'embed/');
+          } else if(tempURL.includes('https://youtu.be/')){
+            tempURL = tempURL.replace('https://youtu.be/','https://www.youtube.com/embed/');
+          }
+          this.videoURL = this.sanitizer.bypassSecurityTrustResourceUrl(tempURL);
           break;
         case "hosted:video":
           this.mediaExist = true;
@@ -58,7 +65,11 @@ export class PreviewComponent implements OnInit {
       this.outerLinkExist = true;
       this.linkURL = this.sanitizer.bypassSecurityTrustResourceUrl(this.post.url);
     }
-    console.log(this.post);
   }
 
+  openCommentDrawer(){
+    if(this.post.num_comments !== 0){
+      this.showComments = !this.showComments;
+    }
+  }
 }

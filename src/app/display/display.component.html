@@ -1,4 +1,11 @@
 <div class="display-container">
-    <app-preview [post]="post" *ngIf = "postExist"></app-preview>
+    <app-loading *ngIf="loading"></app-loading>
+    <div *ngIf="!loading">
+        <app-preview 
+        [post]="post" 
+        [comments]="comments"
+        *ngIf = "postExist"></app-preview>
     <app-preview-none *ngIf = "!postExist"></app-preview-none>
+    </div>
+    
 </div>

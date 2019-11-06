@@ -9,17 +9,24 @@
         <p>{{post.selftext}}</p>
     </div>
     <div class="link-container" *ngIf="outerLinkExist">
-        <p><a [href]="linkURL" target=_blank>See the link here <fa-icon [icon]=faExternalLinkAlt class="link-icon"></fa-icon></a></p>
+        <p><a [href]="linkURL" target=_blank>See the link here <fa-icon [icon]=faExternalLinkAlt class="link-icon">
+                </fa-icon></a></p>
     </div>
     <div class="media-container" *ngIf="mediaExist">
         <img [src]="imageURL" *ngIf="mediaIsImage">
         <div class="video-container" *ngIf="mediaIsVideo">
-            <iframe 
-                [src]="videoURL" frameborder="0"
+            <iframe class="video-iframe" [src]="videoURL" frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
         </div>
-
     </div>
-    <div class="comment-container"></div>
+    <div class="comment-container">
+        <div class="num-comments-container" (click)="openCommentDrawer()">
+            <p *ngIf="post.num_comments < 2">{{post.num_comments}} comment</p>
+            <p *ngIf="post.num_comments > 1">{{post.num_comments}} comments</p>
+        </div>
+        <div class="comment-drawer" *ngIf="showComments">
+            <app-comments [eachComment]="eachComment" *ngFor="let eachComment of comments"></app-comments>
+        </div>
+    </div>
 </div>
