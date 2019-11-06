@@ -1,10 +1,11 @@
 const { app, BrowserWindow } = require('electron')
 const url = require("url");
 const path = require("path");
-//hot reload
-require('electron-reload')(__dirname, {
-    electron: require(`${__dirname}/node_modules/electron`)
-});
+//hot reload when js file changes
+// require('electron-reload')(__dirname);
+// require('electron-reload')(__dirname, {
+//     electron: path.join(__dirname, 'node_modules', '.bin', 'electron')
+//   });
 
 let mainWindow
 

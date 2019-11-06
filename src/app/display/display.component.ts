@@ -49,7 +49,7 @@ export class DisplayComponent implements OnInit {
             this.subredditService.getComments(params.subreddit, this.post.id).subscribe(res => {
               if (res && res[1].data.children.length > 0) {
                 this.comments = res[1].data.children;
-                console.log(this.comments)
+                // console.log(this.comments)
               }
             }, err => {
               //console.log(err)
