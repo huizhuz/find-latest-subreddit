@@ -10,6 +10,12 @@ Functionalities include:
 3. Search for a subreddit will do the same thing indicated in #2.
 4. On the post page, click on refresh icon will fetch the newest post and update the page, if there is any newest posts.
 
+# Get started
+
+## Install dependencies
+
+Run `npm install`
+
 ## Open as an Electron app
 
 Run `npm run start:electron` to start an Electron app locally. 
