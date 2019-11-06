@@ -11,7 +11,7 @@
         <p>{{post.title}}</p>
     </div>
     <div class="content-container" *ngIf="textContentExist">
-        <p>{{post.selftext}}</p>
+        <div [innerHTML]="textContentHTML"></div>
     </div>
     <div class="link-container" *ngIf="outerLinkExist">
         <p><a [href]="linkURL" target=_blank>See the link here <fa-icon [icon]=faExternalLinkAlt class="link-icon">

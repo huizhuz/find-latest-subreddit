@@ -54,6 +54,10 @@ p{
     font-weight: 400;
 }
 
+.content-container{
+    margin: 1rem;
+}
+
 .link-container a{
     color: black;
     font-size: 0.8rem;

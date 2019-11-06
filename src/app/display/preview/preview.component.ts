@@ -22,6 +22,7 @@ export class PreviewComponent implements OnInit {
   public faExternalLinkAlt = faExternalLinkAlt;
   public mediaExist: boolean = false;   //change
   public textContentExist: boolean = false;
+  public textContentHTML: string;
   public outerLinkExist: boolean = false;
   public showComments: boolean = false;
 
@@ -60,6 +61,7 @@ export class PreviewComponent implements OnInit {
           break;
         case "self":
           this.textContentExist = true;
+          this.textContentHTML = this.htmlDecode(this.post.selftext_html);
           break;
         case "link":
           this.outerLinkExist = true;
@@ -73,6 +75,7 @@ export class PreviewComponent implements OnInit {
       }
     } else if (this.post.selftext.length !== 0) {
       this.textContentExist = true;
+      this.textContentHTML = this.htmlDecode(this.post.selftext_html);
     } else if (this.post.selftext.length === 0) {
       this.outerLinkExist = true;
       this.linkURL = this.sanitizer.bypassSecurityTrustResourceUrl(this.post.url);
@@ -96,4 +99,10 @@ export class PreviewComponent implements OnInit {
   onRefresh() {
     this.refreshClicked.emit();
   }
+
+  htmlDecode(rawHTML: string) {
+    var doc = new DOMParser().parseFromString(rawHTML, "text/html");
+    return doc.documentElement.textContent;
+  }
+  
 }

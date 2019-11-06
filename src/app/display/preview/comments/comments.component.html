@@ -2,7 +2,7 @@
     <div class="left-stripe"></div>
     <div class="content">
         <p class="meta">Replied by {{ eachComment.data.author }}</p>
-        <p class="body">{{ eachComment.data.body}}</p>
+        <div class="body" [innerHTML]="eachCommentHTML"></div>
     </div>
     <!-- <ng-container *ngIf="eachComment.replies.children.length > 0">
         <app-comment 
