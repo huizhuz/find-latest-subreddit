@@ -2,7 +2,7 @@
 
 # LatestSubreddit
 
-This project was an Electron app generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.12.
+This project  an Electron app generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.12.
 
 Functionalities include: 
 1. Fetch the most popular subreddits and show them on the home page. 
