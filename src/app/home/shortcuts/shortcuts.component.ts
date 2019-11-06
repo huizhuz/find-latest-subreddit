@@ -8,9 +8,9 @@ import { SubredditService } from 'src/app/services/subreddit.service';
   styleUrls: ['./shortcuts.component.css']
 })
 export class ShortcutsComponent implements OnInit {
-  private shortcuts:Array<any> = [];
-  private loading:boolean = true;
-  private showShortcuts:boolean = false;
+  public shortcuts:Array<any> = [];
+  public loading:boolean = true;
+  public showShortcuts:boolean = false;
 
   constructor(
     private router: Router,

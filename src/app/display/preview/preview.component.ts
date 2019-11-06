@@ -19,17 +19,17 @@ export class PreviewComponent implements OnInit {
   public faHome = faHome;
   public faSyncAlt = faSyncAlt;
 
-  private faExternalLinkAlt = faExternalLinkAlt;
-  private mediaExist: boolean = false;   //change
-  private textContentExist: boolean = false;
-  private outerLinkExist: boolean = false;
-  private showComments: boolean = false;
+  public faExternalLinkAlt = faExternalLinkAlt;
+  public mediaExist: boolean = false;   //change
+  public textContentExist: boolean = false;
+  public outerLinkExist: boolean = false;
+  public showComments: boolean = false;
 
-  private mediaIsVideo: boolean = false;
-  private mediaIsImage: boolean = false;
-  private linkURL: Url;
-  private videoURL: Url;
-  private imageURL: Url;
+  public mediaIsVideo: boolean = false;
+  public mediaIsImage: boolean = false;
+  public linkURL: Url;
+  public videoURL: Url;
+  public imageURL: Url;
 
   constructor(public sanitizer: DomSanitizer) {
   }
