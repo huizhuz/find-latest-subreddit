@@ -14,4 +14,7 @@ export class SubredditService {
   public getComments(subreddit: any, post_id: string): Observable<any> {
     return this.http.get(`https://www.reddit.com/r/${subreddit}/comments/${post_id}.json`)
   }
+  public getPopular(): Observable<any>{
+    return this.http.get('https://www.reddit.com/subreddits/popular.json?limit=12')
+  }
 }

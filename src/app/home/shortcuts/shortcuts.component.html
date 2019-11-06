@@ -1,8 +1,9 @@
-<div class="shortcuts-container">
-    <div 
-        class="shortcut-card" 
-        *ngFor="let shortcut of shortcuts"
-        (click)="onRedirectToSubreddit(shortcut)">
-        <p>{{shortcut}}</p>
+<div>
+    <app-loading *ngIf="loading"></app-loading>
+    <div class="shortcuts-container">
+        <div class="shortcut-card" *ngFor="let shortcut of shortcuts"
+            (click)="onRedirectToSubreddit(shortcut.data.display_name)">
+            <p>{{shortcut.data.display_name}}</p>
+        </div>
     </div>
 </div>

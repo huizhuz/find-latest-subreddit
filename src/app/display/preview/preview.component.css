@@ -13,15 +13,15 @@ p{
     flex-direction: column;
     justify-content: flex-start;
     align-items: left;
-    transition: all 0.5s ease;
+    /* transition: all 0.5s ease; */
     background-color: rgba(216, 216, 216, 0.226);
 }
 
 
-.post-container:hover{
+/* .post-container:hover{
     box-shadow: 2px 3px 3px #ccc;
     transform: translateY(-2px);
-}
+} */
 
 .control{
     margin: 0 auto;
@@ -46,14 +46,17 @@ p{
 
 .meta-container{
     color: #555;
+    font-size: 0.8rem;
 }
 
 .title-container{
     font-size: 1.5rem;
+    font-weight: 400;
 }
 
 .link-container a{
     color: black;
+    font-size: 0.8rem;
     transition: all 0.4s ease;
 }
 .link-container a:hover{
