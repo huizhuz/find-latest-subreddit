@@ -10,8 +10,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: blur(2px);
-    -webkit-filter: blur(2px);
     position: relative;
 }
 
@@ -30,16 +28,16 @@
     transform-origin: center;
     text-align: center;
     z-index: 2;
-/* 
-	animation: float 2.5s linear infinite;
-	animation-direction: alternate; */
-}
-/* 
-@keyframes float {
-	from { transform: rotate(3deg); }
 
-	to { transform: rotate(-3deg); }
-} */
+	animation: float 2.5s linear infinite;
+	animation-direction: alternate;
+}
+
+@keyframes float {
+	from { transform: translate(-50%, -50%) rotate(3deg); }
+
+	to { transform: translate(-50%, -50%) rotate(-3deg); }
+}
 
 @media(max-width: 500px){
     .title{

@@ -1,7 +1,7 @@
 .comment-container{
     margin: 1rem;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     background-color: rgba(245, 245, 220, 0.651);
     border-radius: 5px;
     position: relative;
